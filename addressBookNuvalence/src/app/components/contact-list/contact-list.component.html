@@ -12,17 +12,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>
-                        <button class="btn btn-outline-secondary">
-                            <i class="bi bi-plus-square"></i>
-                        </button>
-                    </td>
-                </tr>
+                <ng-container *ngFor="let contact of contactsArray; index as i">
+                    <tr>
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{contact.name.first}} {{contact.name.last}}</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>
+                            <button class="btn btn-outline-secondary">
+                                <i class="bi bi-plus-square"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </ng-container>
             </tbody>
         </table>
     </div>
