@@ -1,3 +1,4 @@
+//contact interface
 export interface contact {
   name: {
     title: string;

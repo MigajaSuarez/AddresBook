@@ -1,22 +1,22 @@
 <div class="container-fluid">
     <div class="card justify-content-center align-items-center">
-        <img src={{selectedContact?.picture?.large}} class="m-2 contact-img"
-            alt="{{selectedContact?.name?.first}}picture" />
-        <h5 class="card-title">{{selectedContact?.name?.first}} {{selectedContact?.name?.last}}</h5>
+        <img src={{selectedContact.picture.large}} class="m-2 contact-img"
+            alt="{{selectedContact.name.first}}picture" />
+        <h5 class="card-title">{{selectedContact.name.first}} {{selectedContact.name.last}}</h5>
         <div class="card-body w-100">
             <div class="row">
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-4 fw-bold">Mobile:</div>
-                        <div class="col-8">{{selectedContact?.cell}}</div>
+                        <div class="col-8">{{selectedContact.cell}}</div>
                     </div>
                     <div class="row">
                         <div class="col-4 fw-bold">Phone:</div>
-                        <div class="col-8">{{selectedContact?.phone}}</div>
+                        <div class="col-8">{{selectedContact.phone}}</div>
                     </div>
                     <div class="row">
                         <div class="col-3 fw-bold">Email:</div>
-                        <div class="col-9">{{selectedContact?.email}}</div>
+                        <div class="col-9">{{selectedContact.email}}</div>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -25,19 +25,19 @@
                     </div>
                     <div class="row">
                         <div class="col-4 ">Country, State:</div>
-                        <div class="col-8">{{selectedContact?.location?.country}}, {{selectedContact?.location?.state}}</div>
+                        <div class="col-8">{{selectedContact.location.country}}, {{selectedContact.location.state}}</div>
                     </div>
                     <div class="row">
                         <div class="col-4 ">City:</div>
-                        <div class="col-8">{{selectedContact?.location?.city}}</div>
+                        <div class="col-8">{{selectedContact.location.city}}</div>
                     </div>
                     <div class="row">
                         <div class="col-4 ">Street:</div>
-                        <div class="col-8">{{selectedContact?.location?.street?.name}}, {{selectedContact?.location?.street?.number}}</div>
+                        <div class="col-8">{{selectedContact.location.street.name}}, {{selectedContact.location.street.number}}</div>
                     </div>
                     <div class="row">
                         <div class="col-4 ">Postal code:</div>
-                        <div class="col-8">{{selectedContact?.location?.postcode}}</div>
+                        <div class="col-8">{{selectedContact.location.postcode}}</div>
                     </div>
                 </div>
             </div>
