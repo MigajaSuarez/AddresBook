@@ -2,29 +2,29 @@ export interface contactsInter {
   results: [
     {
       name: {
-        title: string
-        first: string
-        last: string
-      }
+        title: string;
+        first: string;
+        last: string;
+      };
       location: {
         street: {
-          number: number
-          name: string
-        }
-        city: string
-        state: string
-        country: string
-        postcode: number
-      }
-      email: string
-      phone: string
-      cell: string
+          number: number;
+          name: string;
+        };
+        city: string;
+        state: string;
+        country: string;
+        postcode: number;
+      };
+      email: string;
+      phone: string;
+      cell: string;
       picture: {
-        large: string
-        medium: string
-        thumbnail: string
-      }
+        large: string;
+        medium: string;
+        thumbnail: string;
+      };
     },
-  ]
-  info?: {}
+  ];
+  info?: {};
 }

@@ -13,7 +13,7 @@
                 </tr>
             </thead>
             <tbody>
-                <ng-container *ngFor="let contact of contactsArray; index as i">
+                <ng-container *ngFor="let contact of $contactsArray; index as i">
                     <tr>
                         <th scope="row">{{i+1}}</th>
                         <td>{{contact.name.first}} {{contact.name.last}}</td>
@@ -22,15 +22,24 @@
                         <td class="d-none d-lg-table-cell">{{contact.phone}}</td>
                         <td class="d-none d-md-table-cell">{{contact.email}}</td>
                         <td>
-                            <button class="btn btn-outline-primary">
-                                <i class="bi bi-plus-square"></i>
+                            <button class="btn btn-outline-primary" *ngIf="selectedForDetails!=i"
+                                (click)="showDetails(i)">
+                                <i class="bi bi-caret-down-fill"></i>
+                            </button><button class="btn btn-outline-danger" *ngIf="selectedForDetails==i"
+                                (click)="hideDetails()">
+                                <i class="bi bi-caret-up-fill"></i>
                             </button>
+                        </td>
+                    </tr>
+                    <tr *ngIf="selectedForDetails==i">
+                        <td colspan="6">
+                            <app-address-card [selectedContact]="contact"></app-address-card>
                         </td>
                     </tr>
                 </ng-container>
             </tbody>
         </table>
-        <app-paginator></app-paginator>
+        <app-paginator (goToPageEvent)="goToPage($event)"></app-paginator>
     </div>
-    
+
 </div>

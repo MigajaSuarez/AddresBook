@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core'
-import { contactsInter } from 'src/app/Interfaces/contacts'
-import { ConnectionService } from 'src/app/services/connection.service'
+import { Component, OnInit } from '@angular/core';
+import { contactsInter } from 'src/app/Interfaces/contacts';
+import { contact } from 'src/app/Interfaces/oneContact';
+import { ConnectionService } from 'src/app/services/connection.service';
 
 @Component({
   selector: 'app-contact-list',
@@ -8,33 +9,39 @@ import { ConnectionService } from 'src/app/services/connection.service'
   styleUrls: ['./contact-list.component.css'],
 })
 export class ContactListComponent implements OnInit {
-  contactsArray!: {
-    name: { title: string; first: string; last: string }
-    location: {
-      street: { number: number; name: string }
-      city: string
-      state: string
-      country: string
-      postcode: number
-    }
-    email: string
-    phone: string
-    cell: string
-    picture: { large: string; medium: string; thumbnail: string }
-  }[];
+  $contactsArray!: contact[];
+  selectedForDetails = -1;
+  
 
   constructor(public connection: ConnectionService) {}
 
   ngOnInit(): void {
     this.connection.getContactList(10, 1).subscribe({
       next: (res: contactsInter) => {
-        console.log(res)
-        this.contactsArray = res.results
+        this.$contactsArray = res.results;
       },
       error: (err: Error) => {
-        console.log(err)
+        console.error(err);
       },
       complete: () => {},
-    })
+    });
+  }
+  goToPage(page: number) {
+    this.connection.getContactList(10, page).subscribe({
+      next: (res: contactsInter) => {
+        console.log(res);
+        this.$contactsArray = res.results;
+      },
+      error: (err: Error) => {
+        console.log(err);
+      },
+      complete: () => {},
+    });
+  }
+  showDetails(i: number) {
+    this.selectedForDetails = i;
+  }
+  hideDetails(){
+    this.selectedForDetails=-1
   }
 }

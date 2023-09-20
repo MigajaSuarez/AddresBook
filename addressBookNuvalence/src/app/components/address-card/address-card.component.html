@@ -1,14 +1,46 @@
-<div class="justify-content-center align-items-center">
-    <h1>My contacts:</h1>
-    <div class="card" >
-        <img src="..." class="card-img-top" alt="..." />
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk
-                of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="container-fluid">
+    <div class="card justify-content-center align-items-center">
+        <img src={{selectedContact?.picture?.large}} class="m-2 contact-img"
+            alt="{{selectedContact?.name?.first}}picture" />
+        <h5 class="card-title">{{selectedContact?.name?.first}} {{selectedContact?.name?.last}}</h5>
+        <div class="card-body w-100">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-4 fw-bold">Cell Phone:</div>
+                        <div class="col-8">{{selectedContact?.cell}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 fw-bold">Phone:</div>
+                        <div class="col-8">{{selectedContact?.phone}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 fw-bold">Email:</div>
+                        <div class="col-9">{{selectedContact?.email}}</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row fw-bold ">
+                        <u>Address Information:</u>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 ">Country, State:</div>
+                        <div class="col-8">{{selectedContact?.location?.country}}, {{selectedContact?.location?.state}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 ">City:</div>
+                        <div class="col-8">{{selectedContact?.location?.city}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 ">Street:</div>
+                        <div class="col-8">{{selectedContact?.location?.street?.name}}, {{selectedContact?.location?.street?.number}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 ">Postal code:</div>
+                        <div class="col-8">{{selectedContact?.location?.postcode}}</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
