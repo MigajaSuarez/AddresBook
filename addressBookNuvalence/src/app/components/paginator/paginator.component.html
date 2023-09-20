@@ -1,7 +1,7 @@
 <div class="pagination">
     <a (click)="firstPage()">&laquo;</a>
     <ng-container *ngFor="let number of arrayForPagination">
-        <a (click)="goToPage(number)">{{number}}</a>
+        <a (click)="goToPage(number)" [class.active]="selected==number">{{number}}</a>
     </ng-container>
     <a (click)="lastPage()">&raquo;</a>
 </div>

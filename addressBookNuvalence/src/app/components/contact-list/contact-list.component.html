@@ -6,16 +6,16 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Cell Phone</th>
+                    <th scope="col">Mobile</th>
                     <th class="d-none d-lg-table-cell" scope="col">Phone</th>
                     <th class="d-none d-md-table-cell" scope="col">Email</th>
                     <th scope="col">More Info</th>
                 </tr>
             </thead>
             <tbody>
-                <ng-container *ngFor="let contact of $contactsArray; index as i">
+                <ng-container *ngFor="let contact of contactsArray; index as i">
                     <tr>
-                        <th scope="row">{{i+1}}</th>
+                        <th scope="row">{{i+pageNumAdder}}</th>
                         <td>{{contact.name.first}} {{contact.name.last}}</td>
                         <td>{{contact.cell}}</td>
 
@@ -41,5 +41,4 @@
         </table>
         <app-paginator (goToPageEvent)="goToPage($event)"></app-paginator>
     </div>
-
 </div>

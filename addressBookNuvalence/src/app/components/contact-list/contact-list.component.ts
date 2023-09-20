@@ -9,8 +9,9 @@ import { ConnectionService } from 'src/app/services/connection.service';
   styleUrls: ['./contact-list.component.css'],
 })
 export class ContactListComponent implements OnInit {
-  $contactsArray!: contact[];
+  contactsArray!: contact[];
   selectedForDetails = -1;
+  pageNumAdder=1;
   
 
   constructor(public connection: ConnectionService) {}
@@ -18,7 +19,7 @@ export class ContactListComponent implements OnInit {
   ngOnInit(): void {
     this.connection.getContactList(10, 1).subscribe({
       next: (res: contactsInter) => {
-        this.$contactsArray = res.results;
+        this.contactsArray = res.results;
       },
       error: (err: Error) => {
         console.error(err);
@@ -30,7 +31,9 @@ export class ContactListComponent implements OnInit {
     this.connection.getContactList(10, page).subscribe({
       next: (res: contactsInter) => {
         console.log(res);
-        this.$contactsArray = res.results;
+        this.contactsArray = res.results;
+        this.pageNumAdder= page*10-9
+        this.hideDetails();
       },
       error: (err: Error) => {
         console.log(err);
