@@ -9,6 +9,7 @@
   },
   "include": [
     "src/**/*.spec.ts",
+    "src/app/components/address-card/address-card.component.spec.ts",
     "src/**/*.d.ts"
   ]
 }

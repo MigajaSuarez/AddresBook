@@ -1,4 +1,4 @@
-<div class="container-fluid bg-light p-4">
+<div class="container-fluid bg-light p-4" *ngIf="loadSuccess">
     <div class="card justify-content-center align-items-center">
         <h1 class="fs-3 my-2">My Address Book</h1>
         <table class="table table-striped">
@@ -40,5 +40,19 @@
             </tbody>
         </table>
         <app-paginator (goToPageEvent)="goToPage($event)"></app-paginator>
+    </div>
+</div>
+<!-- ERROR Modal -->
+<div class="modal fade alert alert-danger" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorMessage"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <h5 class="modal-title" id="errorMessage">Ooops! Something went wrong</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="reloadPage()">Reload Page</button>
+            </div>
+        </div>
     </div>
 </div>
