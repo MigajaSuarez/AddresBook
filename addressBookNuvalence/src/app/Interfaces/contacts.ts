@@ -1,7 +1,6 @@
 export interface contactsInter {
   results: [
     {
-      gender: string
       name: {
         title: string
         first: string

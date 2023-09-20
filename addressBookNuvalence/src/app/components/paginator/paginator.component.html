@@ -1,0 +1,7 @@
+<div class="pagination">
+    <a href="#">&laquo;</a>
+    <ng-container *ngFor="let number of arrayForPagination">
+        <a (click)="goToPage(number)">{{number}}</a>
+    </ng-container>
+    <a href="#">&raquo;</a>
+</div>

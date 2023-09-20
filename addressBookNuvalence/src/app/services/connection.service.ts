@@ -8,11 +8,11 @@ import { contactsInter } from '../Interfaces/contacts';
 })
 export class ConnectionService {
   private apiUrl='https://randomuser.me/api/'
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, ) { }
   /**
    * 
    */
-  getContactList(numberOfContacts:number): Observable <any>{
-    return this.http.get<contactsInter>( this.apiUrl + `/?results=${numberOfContacts}`);
+  getContactList(numberOfContacts:number, page: number): Observable <any>{
+    return this.http.get<contactsInter>( this.apiUrl + `?seed=nuvalence&results=${numberOfContacts}&page=${page}&exc=gender,nat,login,dob,registered`);
   }
 }

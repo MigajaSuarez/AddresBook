@@ -1,14 +1,15 @@
-<div class="container-fluid bg-dark p-2">
-    <div class="card">
-        <h1>My Contacts</h1>
+<div class="container-fluid bg-light p-4">
+    <div class="card justify-content-center align-items-center">
+        <h2><u>My Contacts</u></h2>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                    <th scope="col">Details</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Cell Phone</th>
+                    <th class="d-none d-lg-table-cell" scope="col">Phone</th>
+                    <th class="d-none d-md-table-cell" scope="col">Email</th>
+                    <th scope="col">More Info</th>
                 </tr>
             </thead>
             <tbody>
@@ -16,10 +17,12 @@
                     <tr>
                         <th scope="row">{{i+1}}</th>
                         <td>{{contact.name.first}} {{contact.name.last}}</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>{{contact.cell}}</td>
+
+                        <td class="d-none d-lg-table-cell">{{contact.phone}}</td>
+                        <td class="d-none d-md-table-cell">{{contact.email}}</td>
                         <td>
-                            <button class="btn btn-outline-secondary">
+                            <button class="btn btn-outline-primary">
                                 <i class="bi bi-plus-square"></i>
                             </button>
                         </td>
@@ -27,6 +30,7 @@
                 </ng-container>
             </tbody>
         </table>
+        <app-paginator></app-paginator>
     </div>
     
 </div>

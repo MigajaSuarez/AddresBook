@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { AddressCardComponent } from './components/address-card/address-card.component';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PaginatorComponent } from './components/paginator/paginator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddressCardComponent,
-    ContactListComponent
+    ContactListComponent,
+    PaginatorComponent
   ],
   imports: [
     BrowserModule,
