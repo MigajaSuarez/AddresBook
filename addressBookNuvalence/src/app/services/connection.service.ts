@@ -12,7 +12,7 @@ export class ConnectionService {
   /**
    * 
    */
-  getContactList(numberOfContacts:number, page: number): Observable <any>{
-    return this.http.get<contactsInter>( this.apiUrl + `?seed=nuvalence&results=${numberOfContacts}&page=${page}&exc=gender,nat,login,dob,registered`);
+  getContactList(numberOfContacts:number): Observable <any>{
+    return this.http.get<contactsInter>( this.apiUrl + `?seed=nuvalence&results=${numberOfContacts}&exc=gender,nat,login,dob,registered`);
   }
 }
