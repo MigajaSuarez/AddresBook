@@ -13,7 +13,9 @@ export interface contact {
     city: string;
     state: string;
     country: string;
-    postcode: number;
+    postcode: number | string;
+    coordinates?: {};
+    timezone?: {};
   };
   email: string;
   phone: string;

@@ -16,10 +16,10 @@ export class ConnectionService {
    * http get call to API for contacts
    * @param numberOfContacts Number of contacts to fetch from API 
    * @returns Observable with http response
-   * seed=nuvalence => for get the same data on each request 
+   * seed=nuvalence is for get the same data on each request 
    * exlude=gender,nat,login,dob,registered =>information excluded form call
    */
   getContactList(numberOfContacts:number): Observable <any>{
-    return this.http.get<contactsInter>( this.apiUrl + `?seed=nuvalence&results=${numberOfContacts}&exc=gender,nat,login,dob,registered`);
+    return this.http.get<contactsInter>( this.apiUrl + `?seed=nuvalence&results=${numberOfContacts}&exc=gender,nat,login,dob,registered,id`);
   }
 }

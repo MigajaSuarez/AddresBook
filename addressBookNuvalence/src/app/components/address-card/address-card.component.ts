@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { contact } from 'src/app/Interfaces/oneContact';
 
 @Component({
