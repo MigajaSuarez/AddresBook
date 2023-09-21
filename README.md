@@ -11,7 +11,7 @@ This project was generated with:
 
 # Getting Started
 
-- Clone the project repository from [repository URL].
+- Clone the project repository from https://github.com/MigajaSuarez/AddressBook.git.
 - Install project dependencies using npm install 
 - Run `ng serve` for a dev server. 
 - Navigate to `http://localhost:4200/`. 
